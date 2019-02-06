@@ -93,7 +93,7 @@ int main() {
 
 	int * * myTable = new int *[newRows];			// make a new table (maybe oak this time)
 	for (int r = 0; r<newRows; r++) {
-		myTable[r] = new int[numCols];
+		myTable[r] = new int[newCols];
 	}
 
 	zeroTable(myTable, newRows, newCols);			// fill new table with zeros
@@ -108,11 +108,6 @@ int main() {
 	theTable = myTable;								// make the old table new again
 
 	displayTable(theTable, newRows, newCols);		// display the new table under the old name with new size
-
-	for (int x = 0; x < numRows; x++) {				// delete the new table
-		delete[] theTable[x];						// each row at a time
-	}
-	delete[] theTable;								// and finally delete the col
 
 	return 0;
 }
